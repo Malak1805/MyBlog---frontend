@@ -1,28 +1,20 @@
-import axios from 'axios'
+import Axios from 'axios'
 
-// Get backend URL from Vite env
 const BASE_URL = import.meta.env.VITE_BACKEND_URL
-console.log('Backend URL:', BASE_URL) // should print http://localhost:3000
+console.log('Backend URL:', BASE_URL) 
 
-const Client = axios.create({
-  baseURL: BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
+const Client = Axios.create({ baseURL: BASE_URL })
 
-// Add token to every request if available
 Client.interceptors.request.use(
-  (config) => {
+  async (config) => {
     const token = localStorage.getItem('token')
     if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`
+      config.headers['authorization'] = `Bearer ${token}`
     }
     return config
   },
-  (error) => {
-    return Promise.reject(error)
+  async (error) => {
+    throw error
   }
 )
-
 export default Client

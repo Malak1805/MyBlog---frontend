@@ -2,7 +2,7 @@ import { RegisterUser } from '../../services/Auth'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-
+//register page
 const Register = () => {
   const navigate = useNavigate()
   const initialState = {
