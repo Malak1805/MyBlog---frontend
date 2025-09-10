@@ -25,9 +25,9 @@ const Login = () => {
       const res = await SignInUser(values)
       setValues(initialState)
       navigate('/')
-    } catch (err) {
-      console.error(err)
-      setError(err.response?.data?.msg || 'Login failed')
+    } catch (error) {
+      console.error(error)
+      setError(error.response?.data?.msg || 'Login failed')
     }
   }
 
