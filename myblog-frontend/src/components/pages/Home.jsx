@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getAllBlogs } from '../../../services/Blogs'
 import { useNavigate, Link } from 'react-router-dom'
+import '../../assets/Home.css'
 
 const Home = () => {
 
@@ -24,7 +25,7 @@ const Home = () => {
       <button onClick={() => navigate('/add-blog')}>
   + Create Blog
 </button>
-      <h1>All Blogs</h1>
+      <h1 className='Blog-Text'>All Blogs</h1>
       {blogs.length === 0 ? (
         <p>No blogs to display</p>
       ) : (

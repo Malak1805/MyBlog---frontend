@@ -1,0 +1,113 @@
+
+.Login-Container {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.Login-Container h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #f7fafc;
+  padding-bottom: 1rem;
+}
+
+
+.Login-Container form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.Login-Container label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.Login-Container label:first-of-type {
+  margin-top: 0;
+}
+
+
+.Login-Container input {
+  font-size: 1rem;
+  color: #4a5568;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 0.5rem;
+}
+
+.Login-Container input:focus {
+  outline: none;
+  border-color: #63b3ed;
+  box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.1);
+}
+
+.Login-Container input::placeholder {
+  color: #a0aec0;
+}
+
+
+.error-msg {
+  color: #e53e3e;
+  font-size: 0.9rem;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: #fed7d7;
+  border-radius: 6px;
+  border: 1px solid #feb2b2;
+  text-align: center;
+}
+
+
+.Login-Container button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  background: #63b3ed;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.Login-Container button:hover {
+  background: #4299e1;
+}
+
+.Login-Container button:active {
+  background: #3182ce;
+}
+
+@media (max-width: 640px) {
+  .Login-Container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+  
+  .Login-Container h1 {
+    font-size: 1.5rem;
+  }
+  
+  .Login-Container button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}

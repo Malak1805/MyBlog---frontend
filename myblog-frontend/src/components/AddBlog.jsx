@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createBlog } from '../../services/Blogs'
+import '../assets/AddBlog.css'
 
 const AddBlog = () => {
 
@@ -29,6 +30,7 @@ const AddBlog = () => {
 
   return (
     <div className="addBlog-container">
+       <button onClick={() => navigate(-1)}>← Back</button>
       <h1>Create a New Blog</h1>
       {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit} className="blog-form">
@@ -39,6 +41,7 @@ const AddBlog = () => {
             name="title"
             value={Data.title}
             onChange={handleChange}
+            className='blog-container'
             required
           />
         </label>
@@ -48,10 +51,11 @@ const AddBlog = () => {
             name="description"
             value={Data.description}
             onChange={handleChange}
+            className='blog-container'
             required
           />
         </label>
-        <button type="submit">Add Blog</button>
+        <button type="submit" className='add-btn'>Add Blog</button>
       </form>
     </div>
   )

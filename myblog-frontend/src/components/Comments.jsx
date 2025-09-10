@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Client from '../../services/Api'
+import '../assets/Comments.css'
 
 const Comments = ({ blogId, initialComments }) => {
   const [comments, setComments] = useState(initialComments || [])
@@ -35,28 +36,28 @@ const Comments = ({ blogId, initialComments }) => {
   }
 
   return (
-    <div>
+    <div className='comments-container'>
       <h3>Comments</h3>
       {error && <p>{error}</p>}
 
-      <form onSubmit={addComment}>
+      <form onSubmit={addComment} className='comment-field'>
         <input
           type="text"
           placeholder="Write a comment..."
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
         />
-        <button type="submit">Post</button>
+        <button type="submit" className='post-btn'>Post</button>
       </form>
 
-      {comments.length === 0 && <p>No comments yet</p>}
+      {comments.length === 0 && <p className='empty'>No comments yet</p>}
 
       {comments.map(comment => (
         <div key={comment._id}>
-          <p>
+          <p className='author-name'>
             by {comment.userId?.first_name} {comment.userId?.last_name}: {comment.message}
           </p>
-          <button onClick={() => deleteComment(comment._id)}>Delete</button>
+          <button onClick={() => deleteComment(comment._id)} className='delete-btn'>Delete</button>
         </div>
       ))}
     </div>

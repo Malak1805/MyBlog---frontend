@@ -5,6 +5,7 @@ import Home from './components/pages/Home'
 import AddBlog from './components/AddBlog'
 import BlogDetails from './components/Blogdetail'
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 import Profile from './components/pages/Profile'
 import About from './components/pages/About'
 import EditProfile from './components/EditProfile'
@@ -29,6 +30,7 @@ function App() {
    <Route path="/add-blog" element={<AddBlog />} />
    <Route path="/blogs/:id" element={<BlogDetails />} />
     </Routes>
+    <Footer />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Client from '../../../services/Api'
+import '../../assets/Profile.css'
 
 const Profile = () => {
   const navigate = useNavigate()
@@ -43,16 +44,20 @@ const Profile = () => {
 
 
   return (
-    <div>
-      <h1>My Profile</h1>
-      <p>First Name: {profile.first_name}</p>
-      <p>Last Name: {profile.last_name}</p>
-      <p>Email: {profile.email}</p>
-      {profile.phone_number && <p>Phone: {profile.phone_number}</p>}
+    <div className='profile-container'>
+       <button onClick={() => navigate(-1)}>← Back</button>
+      <h1 className='profile-header'>My Profile</h1>
+      <p>First Name:</p>
+      <p className='text-container'>{profile.first_name}</p>
+<p>Last Name: </p>
+      <p className='text-container'>{profile.last_name}</p>
+      <p>Email:</p>
+      <p className='text-container'>{profile.email}</p>
+      {profile.phone_number && <p className='text-container'>Phone: {profile.phone_number}</p>}
 
-      <button onClick={() => navigate('/edit-profile')}>Edit Profile</button>
+      <button onClick={() => navigate('/edit-profile')} className='edit-btn'>Edit Profile</button>
 
-<button onClick={handleDelete}>
+<button onClick={handleDelete} className='delete-btn'>
         Delete Profile
       </button>
     </div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Client from '../../services/Api'
+import '../assets/EditProfile.css'
 
 const EditProfile = () => {
   const navigate = useNavigate()
@@ -48,8 +49,9 @@ const EditProfile = () => {
   }
 
   return (
-    <div>
-      <h1>Edit Profile</h1>
+    <div className='edit-container'>
+       <button onClick={() => navigate(-1)}>← Back</button>
+      <h1 className='edit-header'>Edit Profile</h1>
       <form onSubmit={handleSubmit}>
         <label>First Name</label>
         <input
@@ -57,6 +59,7 @@ const EditProfile = () => {
           name="first_name"
           value={profile.first_name}
           onChange={handleChange}
+          className='text-container'
           required
         />
 
@@ -66,6 +69,7 @@ const EditProfile = () => {
           name="last_name"
           value={profile.last_name}
           onChange={handleChange}
+          className='text-container'
           required
         />
 
@@ -75,6 +79,7 @@ const EditProfile = () => {
           name="email"
           value={profile.email}
           onChange={handleChange}
+          className='text-container'
           required
         />
 
@@ -83,10 +88,11 @@ const EditProfile = () => {
           type="text"
           name="phone_number"
           value={profile.phone_number || ''}
+          className='text-container'
           onChange={handleChange}
         />
 
-        <button type="submit">Update Profile</button>
+        <button type="submit" className='update-btn'>Update Profile</button>
       </form>
     </div>
   )

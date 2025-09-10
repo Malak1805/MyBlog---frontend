@@ -1,8 +1,10 @@
 import '../../assets/About.css'
-
+import { useNavigate } from 'react-router-dom'
 const About = () => {
+  const navigate = useNavigate()
   return (
     <div className="about-container">
+       <button onClick={() => navigate(-1)}>← Back</button>
       <h1 className="header1">MyBlog</h1>
       <p className="about-paragraph">
         MyBlog is your personal space to write, share, and explore thoughts, stories, and ideas.

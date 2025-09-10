@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Comments from './Comments'
 import Client from '../../services/Api'
+import '../assets/Blogdetail.css'
 
 const BlogDetails = () => {
   const { id } = useParams()
@@ -26,10 +27,10 @@ const BlogDetails = () => {
   if (!blog) return null 
 
   return (
-    <div>
+    <div className='BlogDetail-container'>
       <button onClick={() => navigate(-1)}>← Back</button>
-      <h1>{blog.title}</h1>
-      <p>{blog.description}</p>
+      <h1 className='blogName'>{blog.title}</h1>
+      <p className='blogDescription'>{blog.description}</p>
 
       <Comments blogId={blog._id} initialComments={comments} />
     </div>
